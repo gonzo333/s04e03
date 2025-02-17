@@ -22,12 +22,13 @@ public class OpenAIController {
         String prompt = request.getOrDefault("prompt", "Say something smart");
 
         Map<String, Object> requestBody = new HashMap<>();
-        requestBody.put("model", "gpt-3.5-turbo");
+        requestBody.put("model", "gpt-4o");
         requestBody.put("messages", new Object[]{
                 Map.of("role", "user", "content", prompt)
         });
         requestBody.put("max_tokens", 100);
 
+        System.out.println(openAiApiKey);
         ResponseEntity<Map> response = restTemplate.postForEntity(
                 "https://api.openai.com/v1/chat/completions",
                 new org.springframework.http.HttpEntity<>(requestBody, getHeaders()),

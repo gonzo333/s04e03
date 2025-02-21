@@ -35,10 +35,13 @@ public class OpenAIController {
                 new org.springframework.http.HttpEntity<>(requestBody, getHeaders()),
                 Map.class
         );
+        System.out.println("response: " + response.getBody());
 
-        sendReport();
 
-        return ResponseEntity.ok(response.getBody());
+        Map<String, String> responseBody = new HashMap<>();
+        responseBody.put("description", "przykladowy response");
+
+        return ResponseEntity.ok(responseBody);
     }
 
     private org.springframework.http.HttpHeaders getHeaders() {
@@ -46,21 +49,5 @@ public class OpenAIController {
         headers.set("Authorization", "Bearer " + openAiApiKey);
         headers.set("Content-Type", "application/json");
         return headers;
-    }
-
-    private void sendReport() {
-        String reportUrl = "https://centrala.ag3nts.org/report";
-        Map<String, String> reportData = new HashMap<>();
-        reportData.put("apikey", "991d2a94-9981-4b94-ac19-9518fc43832e");
-        reportData.put("description", "https://s04e03-production.up.railway.app/api/image/prompt");
-        reportData.put("task", "webhook");
-
-        ResponseEntity<String> response = restTemplate.postForEntity(
-                reportUrl,
-                new org.springframework.http.HttpEntity<>(reportData, getHeaders()),
-                String.class
-        );
-
-        System.out.println("Report sent to " + reportUrl + ": " + response.getBody());
     }
 }

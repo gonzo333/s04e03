@@ -30,12 +30,13 @@ public class OpenAIController {
         });
         requestBody.put("max_tokens", 100);
 
-        System.out.println(openAiApiKey);
         ResponseEntity<Map> response = restTemplate.postForEntity(
                 "https://api.openai.com/v1/chat/completions",
                 new org.springframework.http.HttpEntity<>(requestBody, getHeaders()),
                 Map.class
         );
+
+        sendReport();
 
         return ResponseEntity.ok(response.getBody());
     }
@@ -45,5 +46,19 @@ public class OpenAIController {
         headers.set("Authorization", "Bearer " + openAiApiKey);
         headers.set("Content-Type", "application/json");
         return headers;
+    }
+
+    private void sendReport() {
+        String reportUrl = "https://centrala.ag3nts.org/report";
+        Map<String, String> reportData = new HashMap<>();
+        reportData.put("apikey", "991d2a94-9981-4b94-ac19-9518fc43832e");
+        reportData.put("description", "https://s04e03-production.up.railway.app/api/image/prompt");
+        reportData.put("task", "webhook");
+
+        restTemplate.postForEntity(
+                reportUrl,
+                new org.springframework.http.HttpEntity<>(reportData, getHeaders()),
+                String.class
+        );
     }
 }

@@ -19,9 +19,31 @@ public class OpenAIController {
 
     @PostMapping("/image/prompt")
     public ResponseEntity<?> handlePrompt(@RequestBody Map<String, String> request) {
-        String prompt = request.getOrDefault("prompt", "Say something smart");
+
         String instruction = request.getOrDefault("instruction", "Default instruction");
+
+
         System.out.println("instruction: " + instruction);
+
+        String prompt = request.getOrDefault("prompt", "ok teraz jest tak, mam obraz składający się z 16 kwadratów w układzie 4 na 4\n" +
+                "\n" +
+                "pierwszy rząd od lewej to kolejno: \n" +
+                "pierwsza kolumna start nawigacji, druga to trawa na łące, druga to jedno drzewo, trzecia dom\n" +
+                "\n" +
+                "drugi rząd to kolejno od lewej:\n" +
+                "pierwsza kolumna trawa, druga młyn, trzecia trawa, czwarta trawa\n" +
+                "\n" +
+                "trzeci rząd to kolejno od lewej:\n" +
+                "pierwsza kolumna trawa, druga trawa, trzecia małe skały, czwarta dwa drzewa\n" +
+                "\n" +
+                "czwarty rząd to kolejno od lewej:\n" +
+                "pierwsza kolumna duże skały, druga duże skały, trzecia samochód, czwarta jaskinia\n" +
+                "\n" +
+                "startujemy z kwadratu 1 wiersz 1 kolumna\n" +
+                "nawiguj teraz po tych kwadratach według instrukcji i powiedz co jest w kwadracie do którego trafisz według takiego pytania:\n" +
+                instruction +
+                "\n" +
+                "W odpowiedzi zwróć tylko zawartość kwadrata nic poza tym");
 
         Map<String, Object> requestBody = new HashMap<>();
         requestBody.put("model", "gpt-4o");
@@ -39,7 +61,7 @@ public class OpenAIController {
 
 
         Map<String, String> responseBody = new HashMap<>();
-        responseBody.put("description", "przykladowy response");
+        responseBody.put("description", response.getBody().toString());
 
         return ResponseEntity.ok(responseBody);
     }

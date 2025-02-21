@@ -55,10 +55,12 @@ public class OpenAIController {
         reportData.put("description", "https://s04e03-production.up.railway.app/api/image/prompt");
         reportData.put("task", "webhook");
 
-        restTemplate.postForEntity(
+        ResponseEntity<String> response = restTemplate.postForEntity(
                 reportUrl,
                 new org.springframework.http.HttpEntity<>(reportData, getHeaders()),
                 String.class
         );
+
+        System.out.println("Report sent to " + reportUrl + ": " + response.getBody());
     }
 }

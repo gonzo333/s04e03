@@ -20,6 +20,8 @@ public class OpenAIController {
     @PostMapping("/image/prompt")
     public ResponseEntity<?> handlePrompt(@RequestBody Map<String, String> request) {
         String prompt = request.getOrDefault("prompt", "Say something smart");
+        String instruction = request.getOrDefault("instruction", "Default instruction");
+        System.out.println("instruction: " + instruction);
 
         Map<String, Object> requestBody = new HashMap<>();
         requestBody.put("model", "gpt-4o");

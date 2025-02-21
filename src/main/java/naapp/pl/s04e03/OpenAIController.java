@@ -12,7 +12,7 @@ import java.util.Map;
 @RequestMapping("/api")
 public class OpenAIController {
 
-    @Value("${openai.api.key}")
+    @Value("${openai.api.key:#{systemEnvironment['OPENAI_API_KEY']}}")
     private String openAiApiKey;
 
     private final RestTemplate restTemplate = new RestTemplate();

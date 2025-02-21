@@ -57,11 +57,17 @@ public class OpenAIController {
                 new org.springframework.http.HttpEntity<>(requestBody, getHeaders()),
                 Map.class
         );
-        System.out.println("response: " + response.getBody());
-
-
+        String content = "";
+        if (response.getBody() != null && response.getBody().containsKey("choices")) {
+            var choices = (java.util.List<Map<String, Object>>) response.getBody().get("choices");
+            if (!choices.isEmpty() && choices.get(0).containsKey("message")) {
+                Map<String, Object> message = (Map<String, Object>) choices.get(0).get("message");
+                content = (String) message.get("content");
+            }
+        }
+        System.out.println("Content: " + content);
         Map<String, String> responseBody = new HashMap<>();
-        responseBody.put("description", response.getBody().toString());
+        responseBody.put("description", content);
 
         return ResponseEntity.ok(responseBody);
     }

@@ -27,13 +27,13 @@ public class OpenAIController {
 
         String prompt = request.getOrDefault("prompt", "ok teraz jest tak, mam obraz składający się z 16 kwadratów w układzie 4 na 4\n" +
                 "\n" +
-                "pierwszy rząd od lewej to kolejno: \n" +
+                "pierwszy rząd to kolejno od: \n" +
                 "pierwsza kolumna: Start nawigacji\n" +
                 "druga kolumna: Trawa\n" +
                 "trzecia kolumna: Jedno drzewo\n" +
                 "czwarta kolumna: Dom wiejski\n" +
                 "\n" +
-                "drugi rząd to kolejno od lewej:\n" +
+                "drugi rząd od góry to kolejno od lewej:\n" +
                 "pierwsza kolumna: Trawa\n" +
                 "druga kolumna: Wiatrak drewniany\n" +
                 "trzecia kolumna: Trawa\n" +
@@ -52,7 +52,7 @@ public class OpenAIController {
                 "czwarta kolumna: Wejscie jaskini\n" +
                 instruction +
                 "\n" +
-                "W odpowiedzi zwróć tylko zawartość kwadrata nic poza tym");
+                "W odpowiedzi zwróć tylko zawartość kwadrata nic poza tym. Dokładnie taką jaką Ci podaję w opisie. jak będzie instrukcja w prawo/lewo to przechodź po kolumnach, jak góra/dół to po wierszach. Wiesze numerowałem Ci od góry do dołu. A kolumny od lewej do prawej.");
 
         Map<String, Object> requestBody = new HashMap<>();
         requestBody.put("model", "gpt-4o");

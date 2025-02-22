@@ -29,30 +29,30 @@ public class OpenAIController {
                 "\n" +
                 "pierwszy rząd od lewej to kolejno: \n" +
                 "1. Start nawigacji\n" +
-                "2. Trawa łąkowa\n" +
+                "2. Trawa lakowa\n" +
                 "3. Pojedyncze drzewo\n" +
                 "4. Dom wiejski\n" +
                 "\n" +
                 "drugi rząd to kolejno od lewej:\n" +
-                "1. Trawa łąkowa\n" +
+                "1. Trawa lakowa\n" +
                 "2. Wiatrak drewniany\n" +
-                "3. Trawa łąkowa\n" +
-                "4. Trawa łąkowa\n" +
+                "3. Trawa lakowa\n" +
+                "4. Trawa lakowa\n" +
                 "\n" +
-                "trzeci rząd to kolejno od lewej:\n" +
-                "1. Trawa łąkowa\n" +
-                "2. Trawa łąkowa\n" +
-                "3. Małe skały\n" +
+                "trzeci rzad to kolejno od lewej:\n" +
+                "1. Trawa lakowa\n" +
+                "2. Trawa lakowa\n" +
+                "3. Male skaly\n" +
                 "4. Dwa drzewa\n" +
                 "\n" +
                 "czwarty rząd to kolejno od lewej:\n" +
                 "pierwsza kolumna duże skały, druga duże skały, trzecia samochód, czwarta jaskinia\n" +
                 "\n" +
                 "startujemy z kwadratu 1 wiersz 1 kolumna\n" +
-                "1. Duże skały\n" +
-                "2. Duże skały\n" +
-                "3. Samochód osobowy\n" +
-                "4. Wejście jaskini\n" +
+                "1. Duze skaly\n" +
+                "2. Duze skaly\n" +
+                "3. Samochod osobowy\n" +
+                "4. Wejscie jaskini\n" +
                 instruction +
                 "\n" +
                 "W odpowiedzi zwróć tylko zawartość kwadrata nic poza tym");

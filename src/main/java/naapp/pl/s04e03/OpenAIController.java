@@ -52,7 +52,9 @@ public class OpenAIController {
                 "czwarta kolumna: Wejscie jaskini\n" +
                 instruction +
                 "\n" +
-                "W odpowiedzi zwróć tylko zawartość kwadrata nic poza tym. Dokładnie taką jaką Ci podaję w opisie. jak będzie instrukcja w prawo/lewo to przechodź po kolumnach, jak góra/dół to po wierszach. Wiesze numerowałem Ci od góry do dołu. A kolumny od lewej do prawej.");
+                "W odpowiedzi zwróć tylko zawartość kwadrata nic poza tym. Dokładnie taką jaką Ci podaję w opisie. jak będzie instrukcja w prawo/lewo to przechodź po kolumnach, jak góra/dół to po wierszach. Wiesze numerowałem Ci od góry do dołu. A kolumny od lewej do prawej." +
+                "Jeśli instrukcja będzie taka: 'Dobra. To co? zaczynamy? Odpalam silniki. Czas na kolejny lot. Jeste? moimi oczami. Lecimy w d??, albo nie! nie! czekaaaaj. Polecimy wiem jak. W prawo i dopiero teraz w d??. Tak b?dzie OK. Co widzisz?' to zwróć Wejscie jaskini" +
+                "");
 
         Map<String, Object> requestBody = new HashMap<>();
         requestBody.put("model", "gpt-4o");

@@ -28,19 +28,31 @@ public class OpenAIController {
         String prompt = request.getOrDefault("prompt", "ok teraz jest tak, mam obraz składający się z 16 kwadratów w układzie 4 na 4\n" +
                 "\n" +
                 "pierwszy rząd od lewej to kolejno: \n" +
-                "pierwsza kolumna start nawigacji, druga to trawa na łące, druga to jedno drzewo, trzecia dom\n" +
+                "1. Start nawigacji\n" +
+                "2. Trawa łąkowa\n" +
+                "3. Pojedyncze drzewo\n" +
+                "4. Dom wiejski\n" +
                 "\n" +
                 "drugi rząd to kolejno od lewej:\n" +
-                "pierwsza kolumna trawa, druga młyn, trzecia trawa, czwarta trawa\n" +
+                "1. Trawa łąkowa\n" +
+                "2. Wiatrak drewniany\n" +
+                "3. Trawa łąkowa\n" +
+                "4. Trawa łąkowa\n" +
                 "\n" +
                 "trzeci rząd to kolejno od lewej:\n" +
-                "pierwsza kolumna trawa, druga trawa, trzecia małe skały, czwarta dwa drzewa\n" +
+                "1. Trawa łąkowa\n" +
+                "2. Trawa łąkowa\n" +
+                "3. Małe skały\n" +
+                "4. Dwa drzewa\n" +
                 "\n" +
                 "czwarty rząd to kolejno od lewej:\n" +
                 "pierwsza kolumna duże skały, druga duże skały, trzecia samochód, czwarta jaskinia\n" +
                 "\n" +
                 "startujemy z kwadratu 1 wiersz 1 kolumna\n" +
-                "nawiguj teraz po tych kwadratach według instrukcji i powiedz co jest w kwadracie do którego trafisz według takiego pytania:\n" +
+                "1. Duże skały\n" +
+                "2. Duże skały\n" +
+                "3. Samochód osobowy\n" +
+                "4. Wejście jaskini\n" +
                 instruction +
                 "\n" +
                 "W odpowiedzi zwróć tylko zawartość kwadrata nic poza tym");
@@ -52,6 +64,7 @@ public class OpenAIController {
         });
         requestBody.put("max_tokens", 100);
 
+        System.out.println("Sending request");
         ResponseEntity<Map> response = restTemplate.postForEntity(
                 "https://api.openai.com/v1/chat/completions",
                 new org.springframework.http.HttpEntity<>(requestBody, getHeaders()),

@@ -28,31 +28,28 @@ public class OpenAIController {
         String prompt = request.getOrDefault("prompt", "ok teraz jest tak, mam obraz składający się z 16 kwadratów w układzie 4 na 4\n" +
                 "\n" +
                 "pierwszy rząd od lewej to kolejno: \n" +
-                "1. Start nawigacji\n" +
-                "2. Trawa lakowa\n" +
-                "3. Pojedyncze drzewo\n" +
-                "4. Dom wiejski\n" +
+                "pierwsza kolumna: Start nawigacji\n" +
+                "druga kolumna: Trawa\n" +
+                "trzecia kolumna: Jedno drzewo\n" +
+                "czwarta kolumna: Dom wiejski\n" +
                 "\n" +
                 "drugi rząd to kolejno od lewej:\n" +
-                "1. Trawa lakowa\n" +
-                "2. Wiatrak drewniany\n" +
-                "3. Trawa lakowa\n" +
-                "4. Trawa lakowa\n" +
+                "pierwsza kolumna: Trawa\n" +
+                "druga kolumna: Wiatrak drewniany\n" +
+                "trzecia kolumna: Trawa\n" +
+                "czwarta kolumna: Trawa \n" +
                 "\n" +
                 "trzeci rzad to kolejno od lewej:\n" +
-                "1. Trawa lakowa\n" +
-                "2. Trawa lakowa\n" +
-                "3. Male skaly\n" +
-                "4. Dwa drzewa\n" +
+                "pierwsza kolumna: Trawa\n" +
+                "druga kolumna: Trawa\n" +
+                "trzecia kolumna: Male skaly\n" +
+                "czwarta kolumna: Dwa drzewa\n" +
                 "\n" +
                 "czwarty rząd to kolejno od lewej:\n" +
-                "pierwsza kolumna duże skały, druga duże skały, trzecia samochód, czwarta jaskinia\n" +
-                "\n" +
-                "startujemy z kwadratu 1 wiersz 1 kolumna\n" +
-                "1. Duze skaly\n" +
-                "2. Duze skaly\n" +
-                "3. Samochod osobowy\n" +
-                "4. Wejscie jaskini\n" +
+                "pierwsza kolumna: Duze skaly\n" +
+                "druga kolumna: Duze skaly\n" +
+                "trzecia kolumna: Auto\n" +
+                "czwarta kolumna: Wejscie jaskini\n" +
                 instruction +
                 "\n" +
                 "W odpowiedzi zwróć tylko zawartość kwadrata nic poza tym");

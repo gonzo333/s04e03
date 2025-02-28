@@ -1,4 +1,4 @@
-package naapp.pl.s04e03;
+package naapp.pl.AI_DEVS_S05_03;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

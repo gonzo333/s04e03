@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>naapp.pl</groupId>
-    <artifactId>s04e03</artifactId>
+    <artifactId>AI_DEVS_S05_03</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>s04e03</name>
     <description>s04e03</description>
@@ -44,6 +44,14 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.17.2</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

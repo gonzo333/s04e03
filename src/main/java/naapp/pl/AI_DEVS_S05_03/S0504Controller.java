@@ -18,6 +18,7 @@ public class S0504Controller {
 
     @PostMapping("/task")
     public ResponseEntity<?> s0504(@RequestBody Map<String, String> request) {
+        System.out.println("taki request przyszedl: " + request);
         return null;
     }
 

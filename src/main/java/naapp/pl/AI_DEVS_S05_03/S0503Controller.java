@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 
 @RestController
 @RequestMapping("/api")
-public class OpenAIController {
+public class S0503Controller {
 
     @Value("${openai.api.key}")
     private String openAiApiKey;
